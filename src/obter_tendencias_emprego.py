@@ -1,17 +1,17 @@
 import requests
 
-def obter_tendencias_emprego(url, headers, palavra_chave = "IA"):
+def obter_tendencias_emprego(url, headers, palavra_chave = "IA", num_pages = 1, country = "br", date_filter = "all"):
     """
     Faz uma requisição à API JSearch e retorna uma lista de profissões em alta.
     """
     
 
     querystring = {
-        "query": palavra_chave,   # palavra-chave de busca
-        "page": "1",
-        "num_pages": "1",
-        "country": "br",
-        "date_posted": "all"
+        "query": palavra_chave,    # palavra-chave de busca
+        "page": "1",               # pagina que foi feita a busca
+        "num_pages": num_pages,    # numero de paginas que busca
+        "country": country,        # região de busca
+        "date_posted": date_filter # data que foi postada
     }
 
     try:
