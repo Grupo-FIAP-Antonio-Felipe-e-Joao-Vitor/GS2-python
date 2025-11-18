@@ -15,6 +15,7 @@ def calcular_taxa_crescimento_individual (url, headers, profissao):
         # Retorna a taxa calculada
         return taxa
     
+    # Trata erro de divisão por 0
     except ZeroDivisionError:
 
         # Retorna 0 se a divisão tiver 0 no denominador

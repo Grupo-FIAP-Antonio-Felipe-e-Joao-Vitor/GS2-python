@@ -43,14 +43,23 @@ def obter_tendencias_emprego(url, headers, palavra_chave = "IA", num_pages = 1, 
             profissoes.append(profissao)
 
         return profissoes
-
+    
+    # Trata erro http 
     except requests.exceptions.HTTPError as errh:
         print("Erro HTTP:", errh)
+
+    # Trata erro de conexão
     except requests.exceptions.ConnectionError as errc:
         print("Erro de conexão:", errc)
+
+    # Trata erro de timeout
     except requests.exceptions.Timeout as errt:
         print("Timeout:", errt)
+
+    # Trata erro de requisição
     except requests.exceptions.RequestException as err:
         print("Erro na requisição:", err)
+
+    # Trata erros gerais
     except Exception as e:
         print("Erro geral:", e)
